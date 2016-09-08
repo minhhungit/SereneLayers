@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{438B1BA5-7028-4DEB-A19C-026A0B76DFDE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SereneLayers.Business</RootNamespace>
+    <AssemblyName>SereneLayers.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serenity.Core, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serenity.Core.2.4.4\lib\net45\Serenity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serenity.Data, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serenity.Data.2.4.4\lib\net45\Serenity.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serenity.Data.Entity, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serenity.Data.Entity.2.4.4\lib\net45\Serenity.Data.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serenity.Services, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serenity.Services.2.4.4\lib\net45\Serenity.Services.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Modules\Administration\Entities\LoggingRow.cs" />
+    <Compile Include="Modules\Administration\Entities\RolePermissionRow.cs" />
+    <Compile Include="Modules\Administration\Models\UserPermissionListRequest.cs" />
+    <Compile Include="Modules\Administration\Models\UserPermissionUpdateRequest.cs" />
+    <Compile Include="Modules\Administration\Models\UserRoleListRequest.cs" />
+    <Compile Include="Modules\Administration\Models\UserRoleListResponse.cs" />
+    <Compile Include="Modules\Administration\Models\UserRoleUpdateRequest.cs" />
+    <Compile Include="Modules\Administration\PermissionKeys.cs" />
+    <Compile Include="Modules\Administration\Repositories\UserRoleRepository.cs" />
+    <Compile Include="Modules\Administration\Entities\UserRoleRow.cs" />
+    <Compile Include="Modules\Administration\Entities\UserPermissionRow.cs" />
+    <Compile Include="Modules\Administration\Entities\UserRow.cs" />
+    <Compile Include="Modules\Common\Helpers\GetNextNumberHelper.cs" />
+    <Compile Include="Modules\Common\Helpers\SqlExceptionHelper.cs" />
+    <Compile Include="Modules\Common\Imports\ClientTypes\Administration.PermissionCheckEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\Administration.RoleCheckEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\BasicSamples.FilteredLookupDetailEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\BasicSamples.InlineImageFormatterAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\BasicSamples.ProduceSeafoodCategoryEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\Northwind.CustomerEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\Northwind.EmployeeFormatterAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\Northwind.EmployeeListFormatterAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\Northwind.FreightFormatterAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\Northwind.NotesEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\Northwind.OrderDetailsEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\Northwind.PhoneEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\Northwind.ShipperFormatterAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Common\Helpers\GetNextNumberRequest.cs" />
+    <Compile Include="Modules\Northwind\Behaviors\NotesBehavior.cs" />
+    <Compile Include="Modules\Northwind\Entities\CategoryLangRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\CategoryRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\CustomerCustomerDemoRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\CustomerDemographicRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\CustomerRepresentativesRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\CustomerRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\EmployeeRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\EmployeeTerritoryRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\NoteRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\OrderDetailRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\ProductLangRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\ProductLogRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\ProductRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\ShipperRow.cs" />
+    <Compile Include="Modules\Northwind\Entities\SupplierRow.cs" />
+    <Compile Include="Modules\Northwind\Enums\Gender.cs" />
+    <Compile Include="Modules\Northwind\Entities\OrderRow.cs" />
+    <Compile Include="Modules\Northwind\Enums\OrderShippingState.cs" />
+    <Compile Include="Modules\Northwind\PermissionKeys.cs" />
+    <Compile Include="Modules\Northwind\Repositories\CategoryLangRepository.cs" />
+    <Compile Include="Modules\Northwind\Repositories\CategoryRepository.cs" />
+    <Compile Include="Modules\Northwind\Repositories\CustomerRepository.cs" />
+    <Compile Include="Modules\Northwind\Repositories\NoteRepository.cs" />
+    <Compile Include="Modules\Northwind\Repositories\OrderDetailRepository.cs" />
+    <Compile Include="Modules\Northwind\Repositories\ProductLangRepository.cs" />
+    <Compile Include="Modules\Northwind\Repositories\ProductRepository.cs" />
+    <Compile Include="Modules\Northwind\Repositories\RegionRepository.cs" />
+    <Compile Include="Modules\Northwind\Entities\RegionRow.cs" />
+    <Compile Include="Modules\Northwind\Repositories\SalesByCategoryRepository.cs" />
+    <Compile Include="Modules\Northwind\Entities\SalesByCategoryRow.cs" />
+    <Compile Include="Modules\Northwind\Repositories\ShipperRepository.cs" />
+    <Compile Include="Modules\Northwind\Repositories\SupplierRepository.cs" />
+    <Compile Include="Modules\Northwind\Repositories\TerritoryRepository.cs" />
+    <Compile Include="Modules\Northwind\Entities\TerritoryRow.cs" />
+    <Compile Include="Modules\Texts.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Modules\Common\Imports\ClientTypes\ClientTypes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ClientTypes.log</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Modules\Common\Imports\ClientTypes\ClientTypes.log">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Modules\Common\Imports\CodeGenerationHelpers.ttinclude" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Modules\Common\Imports\MultipleOutputHelper.ttinclude" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules\Administration\Behaviors\" />
+    <Folder Include="Modules\Administration\Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
